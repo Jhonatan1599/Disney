@@ -30,7 +30,7 @@ builder.Services.AddSwaggerGen(setupAction =>
 {
     setupAction.SwaggerDoc("LibraryOpenAPISpecification", new()
     {
-        Title = "Library api",
+        Title = "Library apiv2",
         Version = "1"
     });
 });
