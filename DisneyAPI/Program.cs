@@ -30,7 +30,7 @@ builder.Services.AddSwaggerGen(setupAction =>
 {
     setupAction.SwaggerDoc("LibraryOpenAPISpecification", new()
     {
-        Title = "Library apiv2",
+        Title = "Library api",
         Version = "1"
     });
 });
@@ -44,7 +44,7 @@ var connectionString = $"Server={dbHost};Initial Catalog={dbName};User ID=sa;Pas
 //Integrated Security=True ;Encrypt=False
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));   
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));   
     //options.UseSqlServer(connectionString);
 
 });

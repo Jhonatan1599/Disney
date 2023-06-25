@@ -3,8 +3,8 @@ using System;
 using DisneyAPI.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -17,18 +17,18 @@ namespace DisneyAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.5")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("ProductVersion", "6.0.16")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("CharacterMovieOrSerie", b =>
                 {
                     b.Property<Guid>("CharactersId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<Guid>("MoviesOrSeriesId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.HasKey("CharactersId", "MoviesOrSeriesId");
 
@@ -41,24 +41,24 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<int?>("Age")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Story")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("character varying(200)");
 
                     b.Property<float?>("Weight")
                         .HasColumnType("real");
@@ -70,7 +70,7 @@ namespace DisneyAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5402c849-7809-4dee-94f6-13ad3015b790"),
+                            Id = new Guid("10a94ce1-ff3d-472c-a08d-eeaf8ac55d0b"),
                             Age = 92,
                             ImageUrl = "https://example.com/mickey-mouse.jpg",
                             Name = "Mickey Mouse",
@@ -79,7 +79,7 @@ namespace DisneyAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("45b5ca7d-1222-43b9-97a0-88a00b800613"),
+                            Id = new Guid("64fa949a-f92b-4379-9641-58b459722173"),
                             Age = 92,
                             ImageUrl = "https://example.com/minnie.jpg",
                             Name = "Minnie Mouse",
@@ -92,16 +92,16 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 
@@ -110,25 +110,25 @@ namespace DisneyAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("678215c0-0e30-43c3-af72-1b9ab3b822dc"),
+                            Id = new Guid("8f48254b-aa62-409d-884c-b1742daac236"),
                             ImageUrl = "https://example.com/animation.jpg",
                             Name = "Animation"
                         },
                         new
                         {
-                            Id = new Guid("1aee2985-f0a9-4971-8d79-a9697d17008a"),
+                            Id = new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"),
                             ImageUrl = "https://example.com/fantasy.jpg",
                             Name = "Fantasy"
                         },
                         new
                         {
-                            Id = new Guid("fe4a1955-7cca-4569-ac9e-2a35a94ec265"),
+                            Id = new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"),
                             ImageUrl = "https://example.com/family.jpg",
                             Name = "Family"
                         },
                         new
                         {
-                            Id = new Guid("68c6f383-db2a-4545-be20-a44c85e8c784"),
+                            Id = new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"),
                             ImageUrl = "https://example.com/holiday.jpg",
                             Name = "Holiday"
                         });
@@ -138,25 +138,25 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset>("CreationDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("GenreId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<int>("Rating")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("character varying(200)");
 
                     b.HasKey("Id");
 
@@ -167,36 +167,36 @@ namespace DisneyAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5e10e670-0ed1-4781-a76f-d1628dc8fd15"),
-                            CreationDate = new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GenreId = new Guid("678215c0-0e30-43c3-af72-1b9ab3b822dc"),
+                            Id = new Guid("1856b5c7-67ab-480c-9d17-101ac15f3943"),
+                            CreationDate = new DateTimeOffset(new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
+                            GenreId = new Guid("8f48254b-aa62-409d-884c-b1742daac236"),
                             ImageUrl = "https://example.com/steamboat-willie.jpg",
                             Rating = 8,
                             Title = "Steamboat Willie"
                         },
                         new
                         {
-                            Id = new Guid("0d050df9-4d71-466a-9876-d74b8d4b1d39"),
-                            CreationDate = new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GenreId = new Guid("1aee2985-f0a9-4971-8d79-a9697d17008a"),
+                            Id = new Guid("5368f513-4995-47b4-b369-44f2325248d4"),
+                            CreationDate = new DateTimeOffset(new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
+                            GenreId = new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"),
                             ImageUrl = "https://example.com/fantasia.jpg",
                             Rating = 7,
                             Title = "Fantasia"
                         },
                         new
                         {
-                            Id = new Guid("e4500d70-30d9-485a-b556-82de5e332109"),
-                            CreationDate = new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GenreId = new Guid("fe4a1955-7cca-4569-ac9e-2a35a94ec265"),
+                            Id = new Guid("9579e1d9-fb5a-40fd-b8a5-a2b3e86fea29"),
+                            CreationDate = new DateTimeOffset(new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
+                            GenreId = new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"),
                             ImageUrl = "https://example.com/mickey-mouse-club.jpg",
                             Rating = 6,
                             Title = "The Mickey Mouse Club"
                         },
                         new
                         {
-                            Id = new Guid("f24a87e9-c62e-47d2-97f8-e6c056568ab5"),
-                            CreationDate = new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GenreId = new Guid("68c6f383-db2a-4545-be20-a44c85e8c784"),
+                            Id = new Guid("00da6df3-6fe0-469d-aa34-bea64cc0ea59"),
+                            CreationDate = new DateTimeOffset(new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
+                            GenreId = new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"),
                             ImageUrl = "https://example.com/mickeys-once-upon-a-christmas.jpg",
                             Rating = 7,
                             Title = "Mickey's Once Upon a Christmas"
@@ -207,26 +207,25 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
+                        .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
                 });
@@ -235,57 +234,57 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
+                        .HasColumnType("boolean");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
+                        .HasColumnType("boolean");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.HasKey("Id");
 
@@ -294,8 +293,7 @@ namespace DisneyAPI.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -304,18 +302,18 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -328,18 +326,18 @@ namespace DisneyAPI.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -351,16 +349,16 @@ namespace DisneyAPI.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -372,10 +370,10 @@ namespace DisneyAPI.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -387,16 +385,16 @@ namespace DisneyAPI.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
