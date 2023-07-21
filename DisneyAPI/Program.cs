@@ -1,4 +1,5 @@
 using DisneyAPI.DbContexts;
+using DisneyAPI.Domain;
 using DisneyAPI.IdentyEntities;
 using DisneyAPI.Profiles;
 using DisneyAPI.Repository;
@@ -33,6 +34,9 @@ builder.Services.AddSwaggerGen(setupAction =>
         Title = "Library api",
         Version = "1"
     });
+    // Add operationIds to Swagger Specification
+    setupAction.CustomOperationIds(e => $"{e.ActionDescriptor.RouteValues["controller"]}_{e.HttpMethod}");
+
 });
 
 //DbContext
@@ -124,6 +128,7 @@ var logger = services.GetRequiredService<ILogger<Program>>();
 try
 {
     await context.Database.MigrateAsync();
+    await AppDbContextSeed.SeedAsync(context);
 }
 catch (Exception ex)
 {

@@ -3,17 +3,19 @@ using System;
 using DisneyAPI.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace DisneyAPI.Migrations
+namespace DisneyAPI.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230717201346_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,18 +72,18 @@ namespace DisneyAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("10a94ce1-ff3d-472c-a08d-eeaf8ac55d0b"),
+                            Id = new Guid("ea9009f7-9c59-4944-81da-48ee5a773124"),
                             Age = 92,
-                            ImageUrl = "https://example.com/mickey-mouse.jpg",
+                            ImageUrl = "https://disney-api.app.csharpjourney.com/minnie.png",
                             Name = "Mickey Mouse",
                             Story = "Mickey Mouse is the iconic and beloved character in Disney's cartoons.",
                             Weight = 23.5f
                         },
                         new
                         {
-                            Id = new Guid("64fa949a-f92b-4379-9641-58b459722173"),
+                            Id = new Guid("25f94e5b-7aa0-415a-9d3d-34edb85e3277"),
                             Age = 92,
-                            ImageUrl = "https://example.com/minnie.jpg",
+                            ImageUrl = "https://disney-api.app.csharpjourney.com/mickey.png",
                             Name = "Minnie Mouse",
                             Story = "Minnie Mouse is Mickey Mouse's girlfriend and one of Disney's iconic characters.",
                             Weight = 21.4f
@@ -93,10 +95,6 @@ namespace DisneyAPI.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -110,26 +108,22 @@ namespace DisneyAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8f48254b-aa62-409d-884c-b1742daac236"),
-                            ImageUrl = "https://example.com/animation.jpg",
+                            Id = new Guid("a5af601b-5b6e-45b3-a60d-53111d60cd90"),
                             Name = "Animation"
                         },
                         new
                         {
-                            Id = new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"),
-                            ImageUrl = "https://example.com/fantasy.jpg",
+                            Id = new Guid("2dc506fe-16c8-4c8a-af98-425fca9424cc"),
                             Name = "Fantasy"
                         },
                         new
                         {
-                            Id = new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"),
-                            ImageUrl = "https://example.com/family.jpg",
+                            Id = new Guid("935c52c6-b1e1-4dc9-968a-ba2564eaa7e2"),
                             Name = "Family"
                         },
                         new
                         {
-                            Id = new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"),
-                            ImageUrl = "https://example.com/holiday.jpg",
+                            Id = new Guid("da36de85-3f72-4f14-9f35-8697e070c64e"),
                             Name = "Holiday"
                         });
                 });
@@ -140,8 +134,8 @@ namespace DisneyAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTimeOffset>("CreationDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<Guid>("GenreId")
                         .HasColumnType("uuid");
@@ -167,37 +161,37 @@ namespace DisneyAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1856b5c7-67ab-480c-9d17-101ac15f3943"),
-                            CreationDate = new DateTimeOffset(new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("8f48254b-aa62-409d-884c-b1742daac236"),
-                            ImageUrl = "https://example.com/steamboat-willie.jpg",
+                            Id = new Guid("ae471f1b-8d60-4489-8519-23b854237d0d"),
+                            CreationDate = new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GenreId = new Guid("a5af601b-5b6e-45b3-a60d-53111d60cd90"),
+                            ImageUrl = "https://disney-api.app.csharpjourney.com/Steamboat-Willie.jpg",
                             Rating = 8,
                             Title = "Steamboat Willie"
                         },
                         new
                         {
-                            Id = new Guid("5368f513-4995-47b4-b369-44f2325248d4"),
-                            CreationDate = new DateTimeOffset(new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"),
-                            ImageUrl = "https://example.com/fantasia.jpg",
+                            Id = new Guid("45e04d11-dd27-4b45-904b-ca527f7de124"),
+                            CreationDate = new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GenreId = new Guid("2dc506fe-16c8-4c8a-af98-425fca9424cc"),
+                            ImageUrl = "https://disney-api.app.csharpjourney.com/fantasia.jpg",
                             Rating = 7,
                             Title = "Fantasia"
                         },
                         new
                         {
-                            Id = new Guid("9579e1d9-fb5a-40fd-b8a5-a2b3e86fea29"),
-                            CreationDate = new DateTimeOffset(new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"),
-                            ImageUrl = "https://example.com/mickey-mouse-club.jpg",
+                            Id = new Guid("f976eacc-bc89-450b-944b-359c726f9c64"),
+                            CreationDate = new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GenreId = new Guid("935c52c6-b1e1-4dc9-968a-ba2564eaa7e2"),
+                            ImageUrl = "https://disney-api.app.csharpjourney.com/The-Mickey-Mouse-Club",
                             Rating = 6,
                             Title = "The Mickey Mouse Club"
                         },
                         new
                         {
-                            Id = new Guid("00da6df3-6fe0-469d-aa34-bea64cc0ea59"),
-                            CreationDate = new DateTimeOffset(new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"),
-                            ImageUrl = "https://example.com/mickeys-once-upon-a-christmas.jpg",
+                            Id = new Guid("0ede5856-5245-41d4-9cbc-f74ad2bb6cdf"),
+                            CreationDate = new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GenreId = new Guid("da36de85-3f72-4f14-9f35-8697e070c64e"),
+                            ImageUrl = "https://disney-api.app.csharpjourney.com/Mickeys-Once-Upon-a-Christmas.jpg",
                             Rating = 7,
                             Title = "Mickey's Once Upon a Christmas"
                         });

@@ -4,9 +4,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace DisneyAPI.Migrations
+namespace DisneyAPI.Domain.Migrations
 {
-    public partial class PostgressTry1 : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,8 +71,7 @@ namespace DisneyAPI.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    ImageUrl = table.Column<string>(type: "text", nullable: false)
+                    Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -191,7 +190,7 @@ namespace DisneyAPI.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Title = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
-                    CreationDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
+                    CreationDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Rating = table.Column<int>(type: "integer", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: false),
                     GenreId = table.Column<Guid>(type: "uuid", nullable: false)
@@ -236,19 +235,19 @@ namespace DisneyAPI.Migrations
                 columns: new[] { "Id", "Age", "ImageUrl", "Name", "Story", "Weight" },
                 values: new object[,]
                 {
-                    { new Guid("10a94ce1-ff3d-472c-a08d-eeaf8ac55d0b"), 92, "https://example.com/mickey-mouse.jpg", "Mickey Mouse", "Mickey Mouse is the iconic and beloved character in Disney's cartoons.", 23.5f },
-                    { new Guid("64fa949a-f92b-4379-9641-58b459722173"), 92, "https://example.com/minnie.jpg", "Minnie Mouse", "Minnie Mouse is Mickey Mouse's girlfriend and one of Disney's iconic characters.", 21.4f }
+                    { new Guid("25f94e5b-7aa0-415a-9d3d-34edb85e3277"), 92, "https://disney-api.app.csharpjourney.com/mickey.png", "Minnie Mouse", "Minnie Mouse is Mickey Mouse's girlfriend and one of Disney's iconic characters.", 21.4f },
+                    { new Guid("ea9009f7-9c59-4944-81da-48ee5a773124"), 92, "https://disney-api.app.csharpjourney.com/minnie.png", "Mickey Mouse", "Mickey Mouse is the iconic and beloved character in Disney's cartoons.", 23.5f }
                 });
 
             migrationBuilder.InsertData(
                 table: "Genre",
-                columns: new[] { "Id", "ImageUrl", "Name" },
+                columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"), "https://example.com/family.jpg", "Family" },
-                    { new Guid("8f48254b-aa62-409d-884c-b1742daac236"), "https://example.com/animation.jpg", "Animation" },
-                    { new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"), "https://example.com/holiday.jpg", "Holiday" },
-                    { new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"), "https://example.com/fantasy.jpg", "Fantasy" }
+                    { new Guid("2dc506fe-16c8-4c8a-af98-425fca9424cc"), "Fantasy" },
+                    { new Guid("935c52c6-b1e1-4dc9-968a-ba2564eaa7e2"), "Family" },
+                    { new Guid("a5af601b-5b6e-45b3-a60d-53111d60cd90"), "Animation" },
+                    { new Guid("da36de85-3f72-4f14-9f35-8697e070c64e"), "Holiday" }
                 });
 
             migrationBuilder.InsertData(
@@ -256,10 +255,10 @@ namespace DisneyAPI.Migrations
                 columns: new[] { "Id", "CreationDate", "GenreId", "ImageUrl", "Rating", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("00da6df3-6fe0-469d-aa34-bea64cc0ea59"), new DateTimeOffset(new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)), new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"), "https://example.com/mickeys-once-upon-a-christmas.jpg", 7, "Mickey's Once Upon a Christmas" },
-                    { new Guid("1856b5c7-67ab-480c-9d17-101ac15f3943"), new DateTimeOffset(new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)), new Guid("8f48254b-aa62-409d-884c-b1742daac236"), "https://example.com/steamboat-willie.jpg", 8, "Steamboat Willie" },
-                    { new Guid("5368f513-4995-47b4-b369-44f2325248d4"), new DateTimeOffset(new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)), new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"), "https://example.com/fantasia.jpg", 7, "Fantasia" },
-                    { new Guid("9579e1d9-fb5a-40fd-b8a5-a2b3e86fea29"), new DateTimeOffset(new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)), new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"), "https://example.com/mickey-mouse-club.jpg", 6, "The Mickey Mouse Club" }
+                    { new Guid("0ede5856-5245-41d4-9cbc-f74ad2bb6cdf"), new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("da36de85-3f72-4f14-9f35-8697e070c64e"), "https://disney-api.app.csharpjourney.com/Mickeys-Once-Upon-a-Christmas.jpg", 7, "Mickey's Once Upon a Christmas" },
+                    { new Guid("45e04d11-dd27-4b45-904b-ca527f7de124"), new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("2dc506fe-16c8-4c8a-af98-425fca9424cc"), "https://disney-api.app.csharpjourney.com/fantasia.jpg", 7, "Fantasia" },
+                    { new Guid("ae471f1b-8d60-4489-8519-23b854237d0d"), new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("a5af601b-5b6e-45b3-a60d-53111d60cd90"), "https://disney-api.app.csharpjourney.com/Steamboat-Willie.jpg", 8, "Steamboat Willie" },
+                    { new Guid("f976eacc-bc89-450b-944b-359c726f9c64"), new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("935c52c6-b1e1-4dc9-968a-ba2564eaa7e2"), "https://disney-api.app.csharpjourney.com/The-Mickey-Mouse-Club", 6, "The Mickey Mouse Club" }
                 });
 
             migrationBuilder.CreateIndex(

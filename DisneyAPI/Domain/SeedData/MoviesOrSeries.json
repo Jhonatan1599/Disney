@@ -1,0 +1,154 @@
+[
+  {
+    "Id": "63419692-82FC-48CD-AFC1-00A606333D64",
+    "Title": "Steamboat Willie",
+    "CreationDate": "1928-11-18",
+    "Rating": 8,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Steamboat-Willie.jpg",
+    "GenreId": "5D7AF698-BB08-4E47-804D-5C4E51E32DAF"
+  },
+  {
+    "Id": "E80AD408-9E10-4A7E-BCC4-D4BDFDE76E7B",
+    "Title": "Fantasia",
+    "CreationDate": "1940-11-13",
+    "Rating": 7,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/fantasia.jpg",
+    "GenreId": "9B8D80E1-4BF8-4EE7-AAC1-FAC12AEA2DD5"
+  },
+  {
+    "Id": "EFEA2984-B864-419A-B299-B86A96F1B5DC",
+    "Title": "The Mickey Mouse Club",
+    "CreationDate": "1955-10-03",
+    "Rating": 6,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/The-Mickey-Mouse-Club.png",
+    "GenreId": "C3E9C006-0B71-44F9-AE85-AF5310D5C39A"
+  },
+  {
+    "Id": "7395A228-076B-4E07-8F8A-33806CE01DD3",
+    "Title": "The Wise Little Hen",
+    "CreationDate": "1934-06-09",
+    "Rating": 6,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/The-Wise-Little-Hen.jpg",
+    "GenreId": "212DEB8E-9038-4B5F-9C5C-B40C8AFFED26"
+  },
+  {
+    "Id": "AA3BDC21-58A2-4481-88B8-819B366CD06E",
+    "Title": "DuckTales",
+    "CreationDate": "1987-09-18",
+    "Rating": 9,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/DuckTales.jpg",
+    "GenreId": "04AF11EC-EE52-4416-AE42-3002951C92A5"
+  },
+  {
+    "Id": "DE4827AB-1FE3-4FEA-A077-B915F6EF55E2",
+    "Title": "A Goofy Movie",
+    "CreationDate": "1995-04-07",
+    "Rating": 7,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/A-Goofy-Movie.jpg",
+    "GenreId": "E827BE51-284B-46AF-85BB-C9B1C0EE20B9"
+  },
+  {
+    "Id": "D0A86990-A259-4130-9D58-CF3B54FB3797",
+    "Title": "Mickey's Magical Christmas: Snowed in at the House of Mouse",
+    "CreationDate": "2001-11-06",
+    "Rating": 6,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Mickeys-Magical-Christmas.jpg",
+    "GenreId": "6626374F-BC56-4F0B-97E2-92FF6AA7DE9E"
+  },
+  {
+    "Id": "2464FFD5-AAD1-4794-B202-81F419E5ED4D",
+    "Title": "Cinderella",
+    "CreationDate": "1950-02-15",
+    "Rating": 8,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Cinderella.jpg",
+    "GenreId": "B0F8F7F3-897B-4346-AE30-6E5177938A78"
+  },
+  {
+    "Id": "8CC0427F-D97D-4546-B5FB-320E2497215B",
+    "Title": "Cinderella II: Dreams Come True",
+    "CreationDate": "2002-02-26",
+    "Rating": 6,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Cinderella-II.jpg",
+    "GenreId": "5D7AF698-BB08-4E47-804D-5C4E51E32DAF"
+  },
+  {
+    "Id": "BB6E1C99-0764-442C-8C3C-2B440657F75E",
+    "Title": "The Lion King",
+    "CreationDate": "1994-06-15",
+    "Rating": 9,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/The-Lion-King.jpg",
+    "GenreId": "04AF11EC-EE52-4416-AE42-3002951C92A5"
+  },
+  {
+    "Id": "BB499710-8B5D-4AB2-B3A9-E0D39E65FD51",
+    "Title": "The Lion King II: Simba's Pride",
+    "CreationDate": "1998-10-27",
+    "Rating": 7,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/The-Lion-King-II.jpg",
+    "GenreId": "C3E9C006-0B71-44F9-AE85-AF5310D5C39A"
+  },
+  {
+    "Id": "2E07FB26-7F81-424B-A577-92CC47B2E068",
+    "Title": "The Little Mermaid",
+    "CreationDate": "1989-11-17",
+    "Rating": 8,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/The-Little-Mermaid.jpg",
+    "GenreId": "9B8D80E1-4BF8-4EE7-AAC1-FAC12AEA2DD5"
+  },
+  {
+    "Id": "80D41B13-682D-4EE5-9151-131F29006083",
+    "Title": "The Little Mermaid II: Return to the Sea",
+    "CreationDate": "2000-09-19",
+    "Rating": 6,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/The-Little-Mermaid.jpg",
+    "GenreId": "04AF11EC-EE52-4416-AE42-3002951C92A5"
+  },
+  {
+    "Id": "ADAC0AD8-1915-44B1-A86E-0E06B5BD54FF",
+    "Title": "Aladdin",
+    "CreationDate": "1992-11-25",
+    "Rating": 8,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Aladdin.jpg",
+    "GenreId": "04AF11EC-EE52-4416-AE42-3002951C92A5"
+  },
+  {
+    "Id": "66EBF947-B307-42FC-9221-AB9C4DA237BF",
+    "Title": "Aladdin and the King of Thieves",
+    "CreationDate": "1996-08-13",
+    "Rating": 7,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Aladdin-and-the-King-of-Thieves.jpg",
+    "GenreId": "DA9A9799-46DA-4BDB-809A-C9D8A3A90399"
+  },
+  {
+    "Id": "B8D89051-ADC4-4A95-AB50-3F569D18287F",
+    "Title": "Frozen",
+    "CreationDate": "2013-11-27",
+    "Rating": 9,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Frozen.jpg",
+    "GenreId": "E827BE51-284B-46AF-85BB-C9B1C0EE20B9"
+  },
+  {
+    "Id": "56FE6EA3-7F8E-4582-9560-712B6F17A99D",
+    "Title": "Frozen II",
+    "CreationDate": "2019-11-22",
+    "Rating": 8,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Frozen-II.jpg",
+    "GenreId": "9B8D80E1-4BF8-4EE7-AAC1-FAC12AEA2DD5"
+  },
+  {
+    "Id": "EEEF0160-55BF-4A80-A35D-7DEF818F85AD",
+    "Title": "Toy Story",
+    "CreationDate": "1995-11-22",
+    "Rating": 9,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Toy-Story.jpg",
+    "GenreId": "5D7AF698-BB08-4E47-804D-5C4E51E32DAF"
+  },
+  {
+    "Id": "75E3ECE1-F4E0-4DA0-9D6C-9D95D1ADBB6A",
+    "Title": "Toy Story 2",
+    "CreationDate": "1999-11-24",
+    "Rating": 8,
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/movies/Toy-Story-II.jpg",
+    "GenreId": "04AF11EC-EE52-4416-AE42-3002951C92A5"
+  }
+]

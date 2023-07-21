@@ -9,11 +9,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace DisneyAPI.Migrations
+namespace DisneyAPI.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230625132031_PostgressTry1")]
-    partial class PostgressTry1
+    [Migration("20230721202714_changeSeedata")]
+    partial class changeSeedata
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,26 +68,6 @@ namespace DisneyAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Character");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("10a94ce1-ff3d-472c-a08d-eeaf8ac55d0b"),
-                            Age = 92,
-                            ImageUrl = "https://example.com/mickey-mouse.jpg",
-                            Name = "Mickey Mouse",
-                            Story = "Mickey Mouse is the iconic and beloved character in Disney's cartoons.",
-                            Weight = 23.5f
-                        },
-                        new
-                        {
-                            Id = new Guid("64fa949a-f92b-4379-9641-58b459722173"),
-                            Age = 92,
-                            ImageUrl = "https://example.com/minnie.jpg",
-                            Name = "Minnie Mouse",
-                            Story = "Minnie Mouse is Mickey Mouse's girlfriend and one of Disney's iconic characters.",
-                            Weight = 21.4f
-                        });
                 });
 
             modelBuilder.Entity("DisneyAPI.Domain.Entities.Genre", b =>
@@ -95,10 +75,6 @@ namespace DisneyAPI.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -108,32 +84,6 @@ namespace DisneyAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genre");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8f48254b-aa62-409d-884c-b1742daac236"),
-                            ImageUrl = "https://example.com/animation.jpg",
-                            Name = "Animation"
-                        },
-                        new
-                        {
-                            Id = new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"),
-                            ImageUrl = "https://example.com/fantasy.jpg",
-                            Name = "Fantasy"
-                        },
-                        new
-                        {
-                            Id = new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"),
-                            ImageUrl = "https://example.com/family.jpg",
-                            Name = "Family"
-                        },
-                        new
-                        {
-                            Id = new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"),
-                            ImageUrl = "https://example.com/holiday.jpg",
-                            Name = "Holiday"
-                        });
                 });
 
             modelBuilder.Entity("DisneyAPI.Domain.Entities.MovieOrSerie", b =>
@@ -142,8 +92,8 @@ namespace DisneyAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTimeOffset>("CreationDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<Guid>("GenreId")
                         .HasColumnType("uuid");
@@ -165,44 +115,6 @@ namespace DisneyAPI.Migrations
                     b.HasIndex("GenreId");
 
                     b.ToTable("MoviesOrSerie");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("1856b5c7-67ab-480c-9d17-101ac15f3943"),
-                            CreationDate = new DateTimeOffset(new DateTime(1928, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("8f48254b-aa62-409d-884c-b1742daac236"),
-                            ImageUrl = "https://example.com/steamboat-willie.jpg",
-                            Rating = 8,
-                            Title = "Steamboat Willie"
-                        },
-                        new
-                        {
-                            Id = new Guid("5368f513-4995-47b4-b369-44f2325248d4"),
-                            CreationDate = new DateTimeOffset(new DateTime(1940, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("c3dfe4ad-dd07-4a18-b69c-5f7a59279953"),
-                            ImageUrl = "https://example.com/fantasia.jpg",
-                            Rating = 7,
-                            Title = "Fantasia"
-                        },
-                        new
-                        {
-                            Id = new Guid("9579e1d9-fb5a-40fd-b8a5-a2b3e86fea29"),
-                            CreationDate = new DateTimeOffset(new DateTime(1955, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("8a5e2f02-0135-4d11-9f69-6cb54e62191a"),
-                            ImageUrl = "https://example.com/mickey-mouse-club.jpg",
-                            Rating = 6,
-                            Title = "The Mickey Mouse Club"
-                        },
-                        new
-                        {
-                            Id = new Guid("00da6df3-6fe0-469d-aa34-bea64cc0ea59"),
-                            CreationDate = new DateTimeOffset(new DateTime(1999, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, -5, 0, 0, 0)),
-                            GenreId = new Guid("b2ad1af8-9339-4c9c-a0b0-aeb56023361c"),
-                            ImageUrl = "https://example.com/mickeys-once-upon-a-christmas.jpg",
-                            Rating = 7,
-                            Title = "Mickey's Once Upon a Christmas"
-                        });
                 });
 
             modelBuilder.Entity("DisneyAPI.IdentyEntities.ApplicationRole", b =>

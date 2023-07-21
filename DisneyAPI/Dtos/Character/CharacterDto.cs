@@ -20,7 +20,7 @@ namespace DisneyAPI.Dtos.Character
 
         public string ImageUrl { get; set; }
 
-        public List<MovieDto> MoviesOrSeries { get; set; }
+        //public List<MovieDto> MoviesOrSeries { get; set; }
 
 
     }

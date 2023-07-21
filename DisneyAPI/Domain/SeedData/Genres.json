@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "5D7AF698-BB08-4E47-804D-5C4E51E32DAF",
+    "Name": "Animation"
+  },
+  {
+    "Id": "9B8D80E1-4BF8-4EE7-AAC1-FAC12AEA2DD5",
+    "Name": "Fantasy"
+  },
+  {
+    "Id": "C3E9C006-0B71-44F9-AE85-AF5310D5C39A",
+    "Name": "Family"
+  },
+  {
+    "Id": "B6495265-F1D2-4194-8A34-9FAE7BCABE6A",
+    "Name": "Holiday"
+  },
+  {
+    "Id": "212DEB8E-9038-4B5F-9C5C-B40C8AFFED26",
+    "Name": "Comedy"
+  },
+  {
+    "Id": "04AF11EC-EE52-4416-AE42-3002951C92A5",
+    "Name": "Adventure"
+  },
+  {
+    "Id": "E827BE51-284B-46AF-85BB-C9B1C0EE20B9",
+    "Name": "Musical"
+  },
+  {
+    "Id": "6626374F-BC56-4F0B-97E2-92FF6AA7DE9E",
+    "Name": "Christmas"
+  },
+  {
+    "Id": "B0F8F7F3-897B-4346-AE30-6E5177938A78",
+    "Name": "Romance"
+  },
+  {
+    "Id": "DA9A9799-46DA-4BDB-809A-C9D8A3A90399",
+    "Name": "Action"
+  }
+]

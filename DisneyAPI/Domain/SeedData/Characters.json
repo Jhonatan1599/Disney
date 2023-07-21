@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "25FC6070-26BD-4AF5-8F7E-47594131AED4",
+    "Name": "Mickey Mouse",
+    "Age": 90,
+    "Weight": 23.6,
+    "Story": "Mickey Mouse is a cartoon character created by Walt Disney.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/mickey.png"
+  },
+  {
+    "Id": "DA131221-5C09-4CC6-8912-5ED3E9F21F11",
+    "Name": "Minnie Mouse",
+    "Age": 92,
+    "Weight": 21.4,
+    "Story": "Minnie Mouse is Mickey Mouse's girlfriend and one of Disney's iconic characters.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/minnie.png"
+  },
+  {
+    "Id": "B3153633-FE59-4700-9056-0C305F32B897",
+    "Name": "Donald Duck",
+    "Age": 87,
+    "Weight": 32.1,
+    "Story": "Donald Duck is a cartoon character created by Walt Disney.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/donald-duck.png"
+  },
+  {
+    "Id": "8B42F331-7BFE-4B27-82D0-832FA93AE9F4",
+    "Name": "Goofy",
+    "Age": 85,
+    "Weight": 40.2,
+    "Story": "Goofy is a tall, clumsy, yet good-hearted character in Disney's cartoons.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Goofy.png"
+  },
+  {
+    "Id": "FC352249-8F6C-4D0E-AB85-5E6CFD56D20D",
+    "Name": "Cinderella",
+    "Age": 19,
+    "Weight": 52.8,
+    "Story": "Cinderella is a classic Disney princess known for her kindness and magical transformation.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Cinderella.jpg"
+  },
+  {
+    "Id": "5BCEFB89-5C3F-4330-B9B8-D342F2C03D89",
+    "Name": "Simba",
+    "Age": 5,
+    "Weight": 150.0,
+    "Story": "Simba is the lion prince and main character in Disney's The Lion King.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Simba.png"
+  },
+  {
+    "Id": "B0EC9800-968B-43A8-A493-04DF91606A57",
+    "Name": "Ariel",
+    "Age": 16,
+    "Weight": 45.3,
+    "Story": "Ariel is the curious and adventurous mermaid princess in Disney's The Little Mermaid.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Ariel.png"
+  },
+  {
+    "Id": "9BBFD3A8-AECA-4827-A638-6ADB927233C7",
+    "Name": "Aladdin",
+    "Age": 18,
+    "Weight": 60.7,
+    "Story": "Aladdin is the kind-hearted street urchin turned prince in Disney's Aladdin.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Aladdin.png"
+  },
+  {
+    "Id": "D56C7273-38BF-438F-B939-89E0C9E4056D",
+    "Name": "Elsa",
+    "Age": 24,
+    "Weight": 58.9,
+    "Story": "Elsa is the Snow Queen and protagonist in Disney's Frozen, known for her ice powers.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Elsa.png"
+  },
+  {
+    "Id": "86BC36F4-1871-406C-82DA-D267344B131B",
+    "Name": "Woody",
+    "Age": 45,
+    "Weight": 17.5,
+    "Story": "Woody is the loyal cowboy toy and leader in Disney-Pixar's Toy Story franchise.",
+    "ImageUrl": "https://disney-api.app.csharpjourney.com/characters/Woody.jpg"
+  }  
+]

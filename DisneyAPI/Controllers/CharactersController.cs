@@ -3,10 +3,7 @@ using DisneyAPI.Domain.Entities;
 using DisneyAPI.Dtos.Character;
 using DisneyAPI.Helpers;
 using DisneyAPI.Repository;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace DisneyAPI.Controllers
 {
@@ -80,10 +77,10 @@ namespace DisneyAPI.Controllers
             {
                 return NotFound();
             }
-
+            //TODO: Throw an exception if movieFromRepo and characterFromRepo already exists
             await _characterRepository.AddMovieToCharacter(movieFromRepo, characterFromRepo);     
 
-            return Ok(_mapper.Map<CharacterMovieDto>(characterFromRepo));
+            return Ok();
         }
 
 
@@ -105,13 +102,13 @@ namespace DisneyAPI.Controllers
         /// <summary>
         /// Updates a character, fields from "CharacterForUpdateDto" that are null not will be applied to the updated character, the actual fields will keep 
         /// </summary>
-        /// <param name="villaId"></param>
+        /// <param name="characterId"></param>
         /// <param name="characterForUpdateDto"></param>
         /// <returns></returns>
-        [HttpPut("{villaId}")]
-        public async Task<IActionResult> UpdateCharacter(Guid villaId, CharacterForUpdateDto characterForUpdateDto)
+        [HttpPut("{characterId}")]
+        public async Task<IActionResult> UpdateCharacter(Guid characterId, CharacterForUpdateDto characterForUpdateDto)
         {
-            Character? characterIdentity = await _characterRepository.GetCharacterAsync(villaId);
+            Character? characterIdentity = await _characterRepository.GetCharacterAsync(characterId);
 
             if (characterIdentity == null)
             {

@@ -84,7 +84,7 @@ namespace DisneyAPI.Repository
         }
 
         public async Task AddMovieToCharacter(MovieOrSerie movie, Character character)
-        {
+        {   
             character.MoviesOrSeries.Add(movie);
             await _db.SaveChangesAsync();
         }
